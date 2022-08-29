@@ -1,0 +1,32 @@
+
+<h2>Benvenuto nel tuo profilo</h2>
+<div class="userProfileCard">
+    <div class="row">
+        {user_img}
+        <ul>
+              <li>
+                  <h3>Nome:</h3> <p>{user_name}</p>
+              </li>
+              <li>
+                  <h3>Cognome:</h3> <p>{user_surname}</p>
+              </li>
+              <li>
+                <h3 lang="en">Username:</h3> <p>{username}</p>
+            </li>
+            <li>
+                  <h3>Email:</h3>  <p>{user_email}</p>
+            </li>
+            <li>
+                <h3>Data di nascita: </h3><p>{user_birthday}</p>
+            </li>
+            <li>
+                <h3>Data creazione profilo: </h3><p>{user_reg_day}</p>
+            </li>
+        </ul>
+    </div>
+   <div class="second_row">
+    <a href="../php/logout.php">Esci dal tuo profilo</a>
+    <a href="../php/edit_profile.php">Modifica il tuo profilo</a>
+   </div>
+</div>
+

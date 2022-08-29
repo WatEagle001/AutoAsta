@@ -1,0 +1,36 @@
+<form action="../php/editorEventi.php?id_Evento={value-id_Evento}" " method="post" id="formEditEventi"> 
+    <div class="registration_form"> 
+    <h2>Modifica Evento</h2> 
+    <p>Compila i campi seguenti per modificare un evento</p> 
+    <hr> 
+    
+    <fieldset name="capienza" form="formEditEventi"> 
+       <label for="capienza"><b>Capienza</b></label> 
+       <input type="text" value = {value-capienza} placeholder="Inserisci la capienza" name="capienza" id="capienza"> 
+    </fieldset> 
+
+    <fieldset name="data" form="formEditEventi"> 
+        <label for="data"><b>Data</b></label> 
+        <input type="date" value = {value-data} placeholder="Inserisci la data" name="data" id="data"> 
+    </fieldset> 
+
+    <fieldset name="nome" form="formEditEventi"> 
+       <label for="nome"><b>Nome</b></label> 
+       <input type="text" value = {value-nome} placeholder="Inserisci il nome" name="nome" id="nome"> 
+    </fieldset> 
+
+    <fieldset name="descrizione" form="formEditEventi"> 
+        <label for="descrizione"><b>Descrizione</b></label> 
+        <textarea id="descrizione" name="descrizione">{value-descrizione}</textarea>
+    </fieldset> 
+
+    <fieldset name="prezzo" form="formEditEventi"> 
+       <label for="prezzo"><b>Prezzo</b></label> 
+       <input type="number" value = {value-prezzo} placeholder="Inserisci il prezzo" name="prezzo" id="prezzo"> 
+       </select> 
+    </fieldset> 
+
+    <button type="submit" class="register_btn" name="submit">Modifica Dati Evento</button> 
+    <input type="reset" class="reset_btn"> 
+    </div> 
+</form> 

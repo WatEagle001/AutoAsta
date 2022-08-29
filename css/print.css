@@ -1,0 +1,132 @@
+/*
+------------------------------------------------------
+====================== GENERALE ======================
+------------------------------------------------------
+*/
+
+*{
+    padding:0;
+    margin:0;
+}
+html, body{
+    font-size:100%;
+    margin:1em 1em;
+    max-width: 1024px;
+
+}
+#header {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom:0.5em;
+    padding-bottom:2em;
+}
+
+#header h1{
+    font-size: 3em;
+
+}
+
+#header h1:hover{
+transform: scale(1.05);
+
+}
+
+#header h2{
+    font-size:2em;
+    padding: 0em;
+}
+
+#searchForm{
+    display: none;
+}
+
+
+#searchForm input{
+    display: none;
+}
+
+
+#searchForm button {  
+  display: none;
+}
+
+#searchForm button img{
+   display:none;
+}
+
+#menu{
+    display: none;
+}
+
+#accesso{
+    display: none;
+}
+
+.eventButton{
+    display:none;
+}
+
+/*
+------------------------------------------------------
+======================== HOME ========================
+------------------------------------------------------
+*/
+
+/* DA FARE QUANDO CI SARà EFFETTIVAMENTE NELLA PAGINA */
+
+
+/*
+------------------------------------------------------
+====================== CHI SIAMO =====================
+------------------------------------------------------
+*/
+
+.cardAboutUs img{
+    width: 20%; 
+}
+
+.cardAboutUs p{
+    margin-bottom: 2em;
+}
+
+
+/*
+------------------------------------------------------
+======================= EVENTI =======================
+------------------------------------------------------
+*/
+
+.eventImg{
+    display: none;
+}
+
+.eventList dd{
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+.eventList dt{
+    padding-top: 1em;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/*
+------------------------------------------------------
+====================== VEICOLI =======================
+------------------------------------------------------
+*/
+
+.imgListaAuto{
+    padding: 0.5em;
+    width: 25%;
+    padding-bottom: 1em;
+}
+
+.autoList h3{
+    padding-top: 1em;
+}
+
+.autoList p{
+    padding-bottom: 1em;
+}

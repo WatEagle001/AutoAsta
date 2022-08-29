@@ -1,0 +1,648 @@
+/* 
+-------------------------------------------------------------------
+                    GENERALE 
+-------------------------------------------------------------------
+*/
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body
+{
+    font-size: 100%;
+    margin: auto;
+    max-width: 1024px;
+    min-width: 320px;
+}
+
+body
+{
+    border: 1px solid #000;
+}
+
+.globalDiv{
+    background-color: #FFA500;
+}
+
+
+/* 
+-------------------------------------------------------------------
+                    SEZIONE HEADER 
+-------------------------------------------------------------------
+*/
+
+header{
+    background-color: #FFA500;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2em;
+}
+
+header h1{
+    flex:1;
+    background:url("../img/LogoAutoasta.png");
+    text-indent: -9999em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 5em;
+    margin: 0.2em;
+}
+
+#searchForm{
+    flex:2;
+    display: flex;
+    flex-flow: row;
+    align-items:center;
+    justify-content: space-between;
+    /*
+    background-color: #fff; PER LA SEARCH BAR BIANCA
+    border-radius: 10px;*/
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+#searchForm input{
+    font-size: 1.5em;
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #000;
+    text-align: center;
+    margin-left: 0.2em;
+}
+
+::placeholder{
+    color: #000;
+    /*font-style: italic;*/
+}
+
+input:focus::placeholder{
+    color:transparent;
+}
+
+#searchForm button {  
+    cursor: pointer;
+    font-size: 1.5em;
+    background-color: #fff;
+    border:none;
+    border-left: 2px solid #000;
+    border-radius: 0px 3px 3px 0px;
+    padding: 0.2em;
+}
+
+#searchForm button img{
+    box-shadow: none;
+    width: 1.5em;
+}
+
+#accesso{
+    text-align: center;
+    font-size: 1.1em;
+    border: 2px solid #000;
+    border-radius: 3px;
+    padding: 0.2em;
+    margin: 0.5em;
+    background-color: #fff;
+}
+/* 
+-------------------------------------------------------------------
+                    SEZIONE BREADCRUMB
+-------------------------------------------------------------------
+*/
+#breadcrumb
+{
+    clear: both;
+    background-color: #0E1E38;
+    color: #FFA500;
+    font-size: 1.2em;
+    padding: 0.5em 0em 0.5em 1.0em;
+}
+
+#breadcrumb a:link
+{
+    color: #D8D8D8;
+}
+
+#breadcrumb a:visited
+{
+    color: #F2F5A9;
+}
+
+/* 
+-------------------------------------------------------------------
+                    SEZIONE MENU
+-------------------------------------------------------------------
+*/
+#menu{
+    width:20%;
+    font-size: 1.4em;
+    background-color: #FFA500;
+    float: left;
+    padding-top: 2em;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#menu ul li a:hover{
+    background-color: #fff;
+}
+
+#menu ul li{
+    padding: 0.5em;
+    vertical-align: middle;
+    padding-left: 1em;
+}
+
+#content{
+    margin-left:25%;
+    border-left: 1px solid #000;
+    padding:1.0em;
+    background-color: #fff;
+}
+
+#content h2 {
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 1em;
+}
+
+/* 
+-------------------------------------------------------------------
+                    SEZIONE FOOTER 
+-------------------------------------------------------------------
+*/
+footer{
+    clear: both;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    border-top: 2px solid #000;
+    padding: 0.5em
+}
+
+/* 
+-------------------------------------------------------------------
+                     LINK 
+-------------------------------------------------------------------
+*/
+
+/* 
+-------------------------------------------------------------------
+                     SEZIONE SCHEDA PROFILO 
+-------------------------------------------------------------------
+*/
+div .userProfileCard{
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    border: 1px solid #000;
+    flex-flow: column nowrap;
+    margin-bottom: 15em;
+}
+.userProfileCard .row{
+    display: flex;
+    flex-flow: row;
+    border-bottom: 1px solid #000;
+}
+.userProfileCard .row ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+.userProfileCard .row ul li{
+    padding: 0.3em;
+}
+
+.userProfileCard .second_row{
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFA500;
+}
+
+.userProfileCard .second_row a{
+    background-color: #FFF;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin:0.5em;
+    border: 1px solid #000;
+}
+/* 
+-------------------------------------------------------------------
+                    SEZIONE EVENTI 
+-------------------------------------------------------------------
+*/
+
+.eventTitle{
+    background-color: #FFA500;
+    font-size: 1.3em;
+    padding: 0.3em;
+    border: 1px solid #000;
+    margin-top: 1.5em;
+}
+
+.eventImg {
+    align-self: flex-start;
+    padding: 0.5em;
+    max-width: 80%;
+    width: 20em;
+}
+
+.eventParagraph{
+    padding: 1em;
+    align-self: center;
+}
+
+.eventDescription {
+    background-color: #000;
+    color: #fff;
+    min-height: 200px;
+    display: flex;
+    flex-flow: row;
+}
+
+.eventDescription ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.eventDescription ul li{
+    padding: 0.5em;
+}
+
+.idBiglietto{
+    padding: 0.2em;
+    margin: 0 auto;
+    color:#000;
+    text-align: center;
+    background-color: #D8D8D8;
+}
+
+
+
+.eventButton{
+    background-color: #FFA500;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    margin: 0.3em;
+    align-self: center;
+    flex: 1;
+    text-align: center;
+}
+
+.notAvailable{
+    background-color: #ff1111;
+    padding: 0.2em;
+    margin: 0 auto;
+    color:#000;
+    text-align: center;
+}
+
+/*
+-------------------------------------------------------------------
+                    SEZIONE AUTO
+-------------------------------------------------------------------
+*/
+
+.autoList{
+    text-align: center;
+    margin-left: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.carArticle {
+    flex-basis: 45%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+
+.carArticle h3{
+    font-size: 1.4em;
+    padding: 0.3em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #FFA500;
+    font-weight: bold;
+}
+
+
+.carArticle p{
+    color: #FFF;
+}
+
+.carArticle .publish_date {
+    color: #000;
+    background-color: #DFE0DF;
+    padding: 0.2em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+.carArticle .imgListaAuto{
+    max-width: 100%;
+}
+
+.carArticle a{
+    background-color: #FFA500;
+    border-radius: 5px;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+
+
+/*
+-------------------------------------------------------------------
+                    SEZIONE CHI SIAMO
+-------------------------------------------------------------------
+*/
+.AboutUs{
+    text-align: center;
+    margin-left: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+}
+.cardAboutUs{
+    flex-basis: 45%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+
+.cardAboutUs h3{
+    font-size: 1.4em;
+    padding: 0.3em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #FFA500;
+    font-weight: bold;
+}
+
+.cardAboutUs p {
+    padding: 1em;
+    color: #FFF;
+}
+.cardAboutUs img{
+    max-width: 100%;
+}
+/*
+-------------------------------------------------------------------
+                    SEZIONE ERRORE 404
+-------------------------------------------------------------------
+*/
+.errorPage {
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+ .errorPage h3 {
+    font-size: 1.4em;
+    padding: 0.3em;
+    border-top-left-radius: 15px;
+    text-align: center;
+    border-top-right-radius: 15px;
+    background-color: #FFA500;
+    font-weight: bold;
+}
+
+.errorPage p{
+    padding: 1em;
+    color: #FFF;
+}
+
+.errorPage img {
+    width: 100%;
+}
+
+#homeButton{
+    background-color: #FFA500;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    align-self: center;
+    margin: 0.3em;
+}
+
+#img_404{
+    width: 100%;
+}
+
+
+/*
+-------------------------------------------------------------------
+                    SEZIONE FORM REGISTRAZIONE/LOGIN
+-------------------------------------------------------------------
+*/
+.registration_form {
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-top-right-radius: 0.3em;
+    border-top-left-radius: 0.3em;
+    display: flex;
+    flex-flow: column;
+}
+
+.login_form {
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-radius: 0.3em;
+}
+
+.login_form input[type=text], input[type=password]{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.login_form hr{
+    margin-bottom: 1em;
+}
+
+.registration_form hr{
+    margin-bottom: 1em;
+}
+
+.reset_btn{
+    width: 100%;
+    background-color: #ff0000;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding: 0.3em;
+    opacity: 0.9;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    border-radius: 0.3em;
+    align-self: center;
+}
+
+.registration_form input[type=text],input[type=number],input[type=date],input[type=file]{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.registration_form textarea{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.registration_form select{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.register_btn{
+    width: 100%;
+    background-color: #FFA500;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding: 0.3em;
+    opacity: 0.9;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    border-radius: 0.3em;
+}
+
+.register_btn:hover{
+    opacity: 1;
+}
+
+.login_form_section{
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-top: none;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+
+/*
+-------------------------------------------------------------------
+                    SEZIONE SCHEDA VEICOLO 
+-------------------------------------------------------------------
+*/
+.schedaVeicolo{
+    display: flex;
+    flex-flow: column;
+    border: 1px solid #000;
+}
+.schedaVeicolo h3{
+    font-size: 1.4em;
+    padding: 0.3em;
+    text-align: center;
+    background-color: #FFA500;
+    font-weight: bold;
+}
+
+.attributeVeicolo{
+    padding: 0.2em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.schedaVeicolo img{
+    margin: auto;
+    width: 100%;
+}
+.infoVeicolo {
+    list-style-type: none;
+    padding: 1em;
+}
+.infoVeicolo li {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+}
+.infoVeicolo li p{
+    margin-left: 0.5em;
+}
+
+/*
+-------------------------------------------------------------------
+                    GESTIONE ERRORI  
+-------------------------------------------------------------------
+*/
+fieldset{
+    border:0;
+}
+.feedback{
+    margin-bottom: 0.5em;
+}
+.invalid-feedback{
+    background: #ff0000;
+    padding: 0.5em;
+}
+
+.success-msg{
+    background-color: green;
+}
+
+.success-msg p{
+    padding: 0.5em;
+}
+
+.failed-msg{
+    background-color: red;
+    margin-bottom: 15em;
+}
+.failed-msg p{
+    padding: 0.5em;
+}
+

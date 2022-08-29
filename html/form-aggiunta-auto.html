@@ -1,0 +1,58 @@
+<form action="../php/regisrazione.php">
+    <div class="registration_form">
+        <h2>FORM AGGIUNTA NUOVA AUTO</h2>
+        <p>Compila il seguente form per poter inserire un nuovo veicolo</p>
+        <hr>
+
+        <label for="targa"><b>Targa</b></label>
+        <input type="text" placeholder="Inserisci la targa del veicolo" name="targa" id="targa" required>
+
+        <label for="marca"><b>Marca</b></label>
+        <select id="marca" name="marche">
+           <option value="Audi">Audi</option>
+           <option value="Mercedes">Mercedes</option>
+           <option value="Lamborghini">Lamborghini</option>
+           <option value="Lancia">Lancia</option>
+           <option value="Alfa - Romeo">Alfa - Romeo</option>
+           <option value="Ferrari">Ferrari</option>
+        </select>
+
+        <label for="cilindrata"><b>Cilindrata</b></label>
+        <input type="number" name="cilindrata" id="cilindrata" required>
+
+        <label for="anno"><b>Anno produzione</b></label>
+        <input type="number" name="anno" id="anno" required>
+        
+        <label for="posti"><b>Posti omologati</b></label>
+        <input type="number" name="posti" id="posti" min="2" max="7" required>
+
+        <label for="cambio"><b>Tipo Cambio</b></label>
+        <select id="cambio" name="marche">
+           <option value="Manuale">Manuale</option>
+           <option value="Automatico">Automatico</option>
+           <option value="Sequenziale">Sequenziale</option>
+        </select>
+
+        <label for="carburante"><b>Carburante</b></label>
+        <select id="carburante" name="carburante">
+           <option value="Benzina">Benzina</option>
+           <option value="Elettrico">Elettrico</option>
+           <option value="Diesel">Diesel</option>
+           <option value="GPL">GPL</option>
+        </select>
+
+        <label for="chilometri"><b>Chilometri percorsi</b></label>
+        <input type="number" name="chilometri" id="chilometri" min="0" max="10000000" required>
+
+        <label for="descrizione"><b>Descrizione</b></label>
+        <textarea name="message">Inserisci la descrizione del veicolo</textarea>
+
+        <label for="colore"><b>Colore esterni</b></label>
+        <input type="text" placeholder="Inserisci il colore del veicolo" name="colore" id="colore" required>
+
+        <label for="car_image"><b>Carica foto veicolo</b></label>
+        <input type="file" name="car_image" id="car_image" accept=".jpg,.png,.jpeg" required>
+
+        <button type="submit" class="register_btn">CONFERMA DATI INSERITI</button>
+    </div>
+  </form>

@@ -1,0 +1,21 @@
+<form action="../php/registrazione.php">
+    <div class="registration_form">
+        <h2>FORM REGISTRAZIONE DATI UTENTE</h2>
+        <p>Compila i campi per completare le informazioni relative all'account {user-email} </p>
+        <hr>
+
+        <label for="name"><b>Nome</b></label>
+        <input type="text" placeholder="Inserisci il tuo nome" name="nome" id="nome" required>
+
+        <label for="name"><b>Cognome</b></label>
+        <input type="text" placeholder="Inserisci il tuo cognome" name="nome" id="nome" required>
+
+        <label for="birthday"><b>Data nascita</b></label>
+        <input type="date" name="birthday" id="birthday" required>
+
+        <label for="profile_image"><b>Carica foto profilo</b></label>
+        <input type="file" name="profile_image" id="profile_image" accept=".jpg,.png,.jpeg" required>
+
+        <button type="submit" class="register_btn">CONFERMA DATI INSERITI</button>
+    </div>
+  </form>
