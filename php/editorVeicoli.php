@@ -23,9 +23,9 @@
             header("Location: editorVeicoli.php");
             exit();
             }else {
-                echo("ERRORE NELLA QUERY");
-                header("Location: index.php");
-                exit();
+                $_SESSION['errorMsg'] = "Si è verificato un errore durante la modifica del veicolo"; 
+                header('Location: ../php/pagina_avvisi.php'); 
+                exit;
             }
         }
     }

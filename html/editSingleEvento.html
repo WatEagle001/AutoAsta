@@ -1,4 +1,4 @@
-<form action="../php/editorEventi.php?id_Evento={value-id_Evento}" " method="post" id="formEditEventi"> 
+<form action="../php/editorEventi.php?id_Evento={value-id_Evento}" method="post" id="formEditEventi"> 
     <div class="registration_form"> 
     <h2>Modifica Evento</h2> 
     <p>Compila i campi seguenti per modificare un evento</p> 
@@ -8,6 +8,11 @@
        <label for="capienza"><b>Capienza</b></label> 
        <input type="text" value = {value-capienza} placeholder="Inserisci la capienza" name="capienza" id="capienza"> 
     </fieldset> 
+    
+    <fieldset name="id_Evento" form="formEditEventi"> 
+        <label for="id_Evento"><b>Id</b></label> 
+        <input type="number" value = {value-id_Evento} placeholder="Inserisci l'id" name="id_Evento" id="id_Evento"> 
+     </fieldset> 
 
     <fieldset name="data" form="formEditEventi"> 
         <label for="data"><b>Data</b></label> 
@@ -16,9 +21,8 @@
 
     <fieldset name="nome" form="formEditEventi"> 
        <label for="nome"><b>Nome</b></label> 
-       <input type="text" value = {value-nome} placeholder="Inserisci il nome" name="nome" id="nome"> 
+       <textarea id="nome" name="nome">{value-nome}</textarea>
     </fieldset> 
-
     <fieldset name="descrizione" form="formEditEventi"> 
         <label for="descrizione"><b>Descrizione</b></label> 
         <textarea id="descrizione" name="descrizione">{value-descrizione}</textarea>
@@ -31,6 +35,6 @@
     </fieldset> 
 
     <button type="submit" class="register_btn" name="submit">Modifica Dati Evento</button> 
-    <input type="reset" class="reset_btn"> 
+    <input type="submit" class="reset_btn"> 
     </div> 
 </form> 

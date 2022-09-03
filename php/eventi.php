@@ -16,7 +16,7 @@
 
         <?php require_once ('header.php')?>
 
-            <div id="content" tabindex="8">
+            <div id="content">
                 <?php require_once('eventi_page.php')?>
             </div>   
         <?php require_once ('../html/footer.html')?>

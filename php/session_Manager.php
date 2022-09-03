@@ -26,7 +26,10 @@ function login ($email, $password){
 }
 
 function createSession(){
-    session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     $user_mail = null;
     if(isset($_SESSION['email'])){
         $user_mail = $_SESSION['email'];

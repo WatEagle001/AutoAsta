@@ -21,7 +21,7 @@
             $connessioneOK = $connessione->connectToDatabase();
             $indirizzo = $connessione->getIdIndirizzo($_POST['via'],$_POST['citta'],$_POST['cap'],$_POST['num_Civico']);
             $connessione->releaseDB();
-            $checkIns = $user->addEvento($_POST['Capienza'],$_POST['Data'],$indirizzo[0]['id_Indirizzo'],$_POST['nome'],$_POST['Descrizione'],$_POST['Prezzo'],$_POST['url_immagine']); 
+            $checkIns = $user->addEvento($_POST['Capienza'],$_POST['Data'],$indirizzo[0]['id_Indirizzo'],$_POST['nome'],$_POST['Descrizione'],$_POST['Prezzo'],'ciao'); 
             if($checkIns){ 
                 $_SESSION['successMsg'] = "Evento aggiunto con successo"; 
             } 
@@ -72,8 +72,8 @@
                 <input type="date" placeholder="Inserisci la data" name="Data" id="Data"> 
             </fieldset> 
 
-            <fieldset name="Indirizzo" form="formAddEvento">
-                <label for="citta"><b>Citt&agrave;</b></label> 
+            <fieldset name="Indirizzo">
+                <label for="Citta"><b>Citt&agrave;</b></label> 
                 <input type="text" placeholder="Inserisci la città" name="citta" id="citta"> 
 
                 <label for="Via"><b>Via</b></label> 
@@ -98,10 +98,10 @@
             <input type="number" placeholder="Inserisci il prezzo del biglietto" name="Prezzo" id="Prezzo"> 
             </fieldset> 
 
-            <fieldset name="url_immagine" form="formAddVeicolo">
-                <label for="url_immagine"><b>Inserisci l'Immagine</b></label>
-                <input type="file" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine">
-            </fieldset>
+            <fieldset name="url_immagine" form="formAddEvento"> 
+             <label for="url_immagine"><b>url Immagine</b></label> 
+             <input type="file" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine"> 
+            </fieldset> 
         
             <button type="submit" class="register_btn" name="submit">Inserisci Evento</button> 
             <input type="reset" class="reset_btn"> 

@@ -15,16 +15,16 @@
         <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button>    
     </form>
 
-    <div id="accesso" tabindex="3">
+    <div id="accesso">
         <?php $page->printLogin(); ?>
     </div>
 </header>  
 
-<nav id="breadcrumb" tabindex="4">
+<nav id="breadcrumb">
     <?php $page->printBreadcrumb();?>
 </nav>
 
-<div id="menu" tabindex="5">
+<div id="menu">
     <ul>
         <?php $page->printMenu(); ?>
     </ul>

@@ -1,7 +1,6 @@
 <?php 
     require_once ('session_Manager.php');
     require_once('page.php');
-    require_once('veicolo.php');
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -24,9 +23,9 @@
             header("Location: editorVeicoli.php");
             exit();
             }else {
-                echo("ERRORE NELLA QUERY");
-                header("Location: index.php");
-                exit();
+                $_SESSION['errorMsg'] = "Impossibile modificare il veicolo"; 
+                header('Location: ../php/pagina_avvisi.php'); 
+                exit;
             }
         }
     }
@@ -71,9 +70,8 @@
                             $listaVeicoli = str_replace("{placeholder-colore}", $veicolo["colore_Esterni"],$listaVeicoli);
                             $listaVeicoli = str_replace("{placeholder-descrizione}", $veicolo["descrizione"],$listaVeicoli);
                             $listaVeicoli = str_replace("{placeholder-immagine}", $veicolo["url_Immagine"],$listaVeicoli);
-                            //$listaVeicoli = str_replace("{placeholder-chilometri}", $veicolo["chilometri_Percorsi"],$listaVeicoli);
-                           // $listaVeicoli = str_replace("{placeholder-disponibile}", $veicolo["disponibile"],$listaVeicoli);
-                            //$listaVeicoli = str_replace("{placeholder-data_Aggiunta}", $veicolo["data_Aggiunta"],$listaVeicoli);
+                            $listaVeicoli = str_replace("{placeholder-chilometri}", $veicolo["chilometri_Percorsi"],$listaVeicoli);
+                            $listaVeicoli = str_replace("{placeholder-prezzo}",$veicolo['base_Asta'],$listaVeicoli);
                         }
                     }
                     else{

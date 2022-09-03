@@ -32,7 +32,7 @@ class database_Manager{
     }
     
     public function getEventoInfo($id_Evento){
-        $query = "SELECT * FROM Evento,Indirizzo WHERE Evento.id_Evento=$id_Evento AND Indirizzo.id_Indirizzo=Evento.indirizzo;";
+        $query = "SELECT * FROM Evento,Indirizzo WHERE Evento.id_Evento='$id_Evento' AND Indirizzo.id_Indirizzo=Evento.indirizzo;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventoInfo:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -101,7 +101,7 @@ class database_Manager{
     public function getIdIndirizzo($via,$città,$cap,$num_Civico){
         $query = 
             "SELECT id_Indirizzo FROM Indirizzo 
-            WHERE via = '$via' AND città = '$città'
+            WHERE via = '$via' AND citta = '$città'
             AND cap = '$cap' AND num_Civico = '$num_Civico' LIMIT 1;";
         
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getIndirizzi:" . mysqli_error($this->connection));

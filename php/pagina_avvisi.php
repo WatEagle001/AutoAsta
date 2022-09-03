@@ -25,7 +25,7 @@
 
         <?php require_once ('header.php')?>
 
-            <div id="content" tabindex="8">
+            <div id="content">
                 <?php
                     if (isset($_SESSION['errorMsg']))
                         $page->printMessagge($_SESSION['errorMsg'],false);
@@ -33,7 +33,8 @@
                         $page->printMessagge($_SESSION['successMsg'],true);
                     unset($_SESSION['errorMsg']);
                     unset($_SESSION['successMsg']);
-                ?>    
+                ?>  
+                <a id ="homeButton" class="WarningPageElement" href="../php/index.php">TORNA ALLA PAGINA INIZIALE</a>  
             </div>   
         <?php require_once ('../html/footer.html')?>
         </div>

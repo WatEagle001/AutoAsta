@@ -4,7 +4,7 @@
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
-    error_reporting (E_ALL & ~E_NOTICE);
+    error_reporting(E_ALL);
 
     $user = createSession();
 
@@ -15,13 +15,13 @@
     }
 
     if(!empty($_POST)){
-        $checkIns = $user->addVeicolo($_POST['Targa'],$_POST['marca'],$_POST['modello'],$_POST['cilindrata'],$_POST['anno'],$_POST['posti'],$_POST['cambio'],$_POST['carburante'],$_POST['colore_esterni'],$_POST['url_immagine'],$_POST['descrizione'],$_POST['chilometri_Percorsi'],1,$_POST['base_Asta'], $_POST['data_Aggiunta']);
+        $checkIns = $user->addVeicolo($_POST['Targa'],$_POST['marca'],$_POST['modello'],$_POST['cilindrata'],$_POST['anno'],$_POST['posti'],$_POST['cambio'],$_POST['carburante'],$_POST['colore_esterni'],$_POST['url_immagine'],$_POST['descrizione'],$_POST['chilometri_Percorsi'],1);
         if($checkIns){
             $_SESSION['successMsg'] = "Veicolo aggiunto con successo con successo";
         }
         else $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
 
-        $checkIns = $user->addAstaEmpty($_POST['base_Asta'],$_POST['Targa']);
+        $checkIns = $user->addAstaEmpty($_POST['Prezzo'],$_POST['Targa']);
 
         header('Location: ../php/pagina_avvisi.php');
         exit;
@@ -32,11 +32,11 @@
  <html lang="it">
      <head>
          <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-         <title>Aggiunta Veicolo - Auto Asta</title>
+         <title>Login Utente - Auto Asta</title>
          <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
          <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
          <meta charset="UTF-8"/>
-         <meta name="description" content="Aggiunta Veicolo di Auto Asta"/>
+         <meta name="description" content="Login Utente di Auto Asta"/>
          <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
          <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>  
          <script src="../JS/script.js"></script>     
@@ -57,8 +57,13 @@
              </fieldset>
             
              <fieldset name="marca" form="formAddVeicolo">
-             <label for="marga"><b>Marga</b></label>
-                 <input type="text" placeholder="Inserisci la marca" name="marca" id="marca">
+                <label for="marca"><b>Marca</b></label>
+                <select id ="marca" name = "marca" form = "formAddVeicolo">
+                    <option value="Volvo">Volvo</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Audi">Audi</option>      
+                </select>
              </fieldset>
 
              <fieldset name="modello" form="formAddVeicolo">
@@ -122,13 +127,9 @@
                 <input type="number" placeholder="Inserisci i chilometri percorsi" name="chilometri_Percorsi" id="chilometri_Percorsi"  value ="0" min="0">
             </fieldset>
 
-            <fieldset name="data_Aggiunta" form="formAddVeicolo">
-                <label for="data_Aggiunta"><b>Data Aggiunta al Sito</b></label>
-                <input type="date" placeholder="Inserisci la data" name="data_Aggiunta" id="data_Aggiunta">
-            </fieldset>
-            <fieldset name="base_Asta" form="formAddVeicolo">
-                <label for="base_Asta"><b>Prezzo Base</b></label>
-                <input type="number" placeholder="Inserisci il prezzo" name="base_Asta" id="base_Asta">
+            <fieldset name="prezzo" form="formAddVeicolo">
+                <label for="prezzo"><b>Prezzo base di vendita</b></label>
+                <input type="number" placeholder="Inserisci il prezzo base di vendita" name="Prezzo" id="Prezzo"  value ="0" min="0">
             </fieldset>
 
              <button type="submit" class="register_btn" name="submit">Inserisci Veicolo</button>

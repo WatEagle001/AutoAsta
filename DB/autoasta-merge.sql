@@ -144,7 +144,7 @@ DROP TABLE IF EXISTS `indirizzo`;
 CREATE TABLE `indirizzo` (
   `id_Indirizzo` int(11) NOT NULL AUTO_INCREMENT,
   `via` varchar(50) NOT NULL,
-  `città` varchar(100) NOT NULL,
+  `citta` varchar(100) NOT NULL,
   `cap` int(11) NOT NULL,
   `num_Civico` varchar(20) NOT NULL,
   PRIMARY KEY (`id_Indirizzo`)

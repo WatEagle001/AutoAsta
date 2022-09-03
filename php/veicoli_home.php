@@ -18,7 +18,7 @@
                 $listaVeicoli .='<article class = "carArticle">';
                 $listaVeicoli .= '<h3 > ' . $veicolo['marca'].' '.$veicolo['modello'] .'</h3>';
                 $listaVeicoli .= '
-                    <img class="imgListaAuto" src="../img/' . $veicolo['url_Immagine'] . '"/>
+                    <img class="imgListaAuto" alt="'.$veicolo['marca'].''.$veicolo['modello'].'" src="../img/' . $veicolo['url_Immagine'] . '"/>
                 <a href="scheda_veicolo.php?Targa='.$veicolo['Targa'].'">MAGGIORI INFORMAZIONI</a>
                 <p class="publish_date"> Pubblicato il giorno: '.$veicolo['data_Aggiunta'].'</p>
                 </article>';

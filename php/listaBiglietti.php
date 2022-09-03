@@ -16,12 +16,12 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Biglietti - Auto Asta</title>
+        <title>Eventi - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
         <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
         <meta charset="UTF-8"/>
-        <meta name="description" content="Biglietti di Auto Asta"/>
+        <meta name="description" content="Homepage di Auto Asta"/>
         <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
     </head>
@@ -30,11 +30,11 @@
 
         <?php require_once ('header.php')?>
 
-            <div id="content" tabindex="8">
+            <div id="content">
             <?php
                 require_once "database_Manager.php";
                 
-                $paginaHTML= file_get_contents("../html/biglietti.html");
+                $paginaHTML= file_get_contents("../html/eventi.html");
                 $connessione = new database_Manager();
                 $connessioneOK = $connessione->connectToDatabase();
                 $eventi = ""; /* DATI FREZZI DAL DB */ 
@@ -55,7 +55,7 @@
                                 <li>INTESTATO A: ' . $biglietto['utente'] . '</li>
                                 <li>ACQUISTATO IL GIORNO: <p>' . $dataAcquisto->format('d-m-Y').'</p></li>
                                 <li>VALIDO IL GIORNO: <p>' . $dataEvento->format('d-m-Y'). '</p></li>
-                                <li>LUOGO SVOLGIMENTO: <p>' . $evento[0]['via'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap'].'</p></li>
+                                <li>LUOGO SVOLGIMENTO: <p>' . $evento[0]['via'] .' '. $evento[0]['citta'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap'].'</p></li>
                                 </ul>';
                             $listaEventi .='<a class="eventButton" href="../php/delete_Ticket.php?Id_Biglietto='.$biglietto['Id_Biglietto'].'">Elimina Biglietto</a></dd>';
                             $listaEventi .='<p class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</p>';
@@ -63,7 +63,7 @@
                         $connessione->releaseDB();
                     }
                     else{
-                        $listaEventi = "<p> Non hai biglietti per i nostri eventi </p>";
+                        $listaEventi = "<p> Non ci sono informazioni relative ai eventi </p>";
                     }
                 }
                 else{

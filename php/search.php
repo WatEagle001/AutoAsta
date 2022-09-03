@@ -7,7 +7,7 @@ if(!empty($_GET)){
 'volkswagen', 'volvo','cadillac','opel','ferrari', 'pagani', 'mercedes', 'toyota');
 
     $wordsEventi  = array('eventi','evento','asta','manifestazione',
-                    'aste','prossimi');
+                    'aste','prossimi', 'padova', 'milano', 'roma', 'bologna');
 
     if(checkDistance($input,$wordsAuto)){
         header('Location: ../php/veicoli.php');

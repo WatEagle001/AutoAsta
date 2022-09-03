@@ -19,7 +19,7 @@
                 $date = new DateTime($personaggio['data']);
                 $listaPersonaggi .= '<dt class = "eventTitle" > ' . $personaggio['nome'] .' '. $date->format('d-m-Y').'</dt>';
                 $listaPersonaggi .= '<dd class= "eventDescription">
-                    <img class="eventImg" src="../img/' . $personaggio['url_immagine'] . '"/>
+                    <img class="eventImg" alt="'.$personaggio['nome'].'" src="../img/' . $personaggio['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>
                     <a class="eventButton" href="../php/eventi.php">ALTRI EVENTI</a>
                 </dd>';
