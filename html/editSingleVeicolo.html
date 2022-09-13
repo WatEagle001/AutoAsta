@@ -1,6 +1,6 @@
 <h2>EDITOR DEL VEICOLO CON TARGA {placeholder-targa}</h2>
 
-<form action="../php/editSingleVeicolo.php?Targa={placeholder-targa}" method="post">
+<form action="editSingleVeicolo.php?Targa={placeholder-targa}" method="post">
     <div class="registration_form">
         <label for="targa">Targa</label>
         <input type="text" id="targa" name="targa" placeholder="Inserisci la targa del veicolo" value="{placeholder-targa}" aria-required="true" required>
@@ -29,7 +29,7 @@
         <input type="text" id="colori_Esterni" name="colori_Esterni" placeholder="Inserisci il colore della carrozzeria" value="{placeholder-colore}" aria-required="true" required>
 
         <label for="url_immagine">URL Immagine</label>
-        <input type="text" id="url_Immagine" name="url_Immagine" placeholder="Inserisci il nome dell'immagine" value="{placeholder-immagine}" aria-required="true" required>
+        <input type="text" id="url_Immagine" name="url_Immagine" placeholder="Inserisci il nome dell'immagine" value="{placeholder-immagine}" readonly aria-disabled="true">
 
         <label for="descrizione">Descrizione</label>
         <textarea id="descrizione" name="descrizione">{placeholder-descrizione}</textarea>
@@ -41,7 +41,5 @@
         <input type="number" id="prezzo_base" name="prezzo_base" placeholder="Inserisci il prezzo base di vendita" value="{placeholder-prezzo}" aria-required="true" required>
 
         <button type="submit" class="register_btn" aria-label="Modifica i dati dell'auto">MODIFICA DATI AUTO</button>
-        <input type="submit" class="reset_btn" aria-label="Cancella i campi inseriti"> 
-
     </div>
 </form>

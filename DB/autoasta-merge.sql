@@ -41,14 +41,8 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`id_Account`, `username`, `password`, `email`, `isAdmin`) VALUES
 (1, 'matteopillon', '4ee8b3991aa777ebdbfc2b54a9163637', 'matteopillon98@gmail.com', 1),
-(2, 'mariorossi72', '1cc477616bb182e87ec7285bfbf8c34b', 'mariorossi@email.com', 0),
-(3, 'luigiMagnifico93', '8f58fe78bf209813d552e92f68d24974', 'luigibianchi@email.com', 0),
-(4, 'giggiog', '16272a5dd83c63010e9f67977940e871', 'gigiogiacomo@gmail.com', 0),
-(5, 'allelleb', 'a382e131ed798891b816f8d1e3ce1908', 'allellebrazof@live.it', 0),
-(6, 'MarcoGino90', '7e5e77f2b21b573013d1f33515360d07', 'marcogino90@yandex.com', 0),
-(7, 'Lillo', '38907befbdefbe570ffeddaa99bb4a8c', 'lillogreg60@yahoo.com', 0),
-(8, 'CinoPistoia', '973110a7ac5f488b626fb2530c723049', 'cinodapistoia@gmail.com', 0),
-(9, '17teo98', '81dc9bdb52d04dc20036dbd8313ed055', 'matteoplln@gmail.com', 1);
+(2, 'admin', '21232f297a57a5a743894a0e4a801fc3' , 'admin@admin.it', 1),
+(3, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@user.it', 0);
 
 -- --------------------------------------------------------
 
@@ -99,8 +93,6 @@ CREATE TABLE `biglietto` (
 --
 
 INSERT INTO `biglietto` (`Id_Biglietto`, `evento`, `utente`, `data_Acquisto`) VALUES
-(1, 1, 'luigibianchi@email.com', '2021-12-19'),
-(2, 3, 'luigibianchi@email.com', '2021-12-19'),
 (4, 2, 'matteopillon98@gmail.com', '2022-08-26');
 
 -- --------------------------------------------------------
@@ -182,15 +174,10 @@ CREATE TABLE `utente` (
 --
 
 INSERT INTO `utente` (`Email`, `nome`, `cognome`, `data_Creazione`, `url_Immagine`, `data_nascita`) VALUES
-('allellebrazof@live.it', 'Allelle', 'Brazof', '2022-08-26', '', '1960-07-10'),
-('cinodapistoia@gmail.com', 'Cino', 'Pistoia', '2022-08-26', '', '1993-10-09'),
-('gigiogiacomo@gmail.com', 'Giacomo', 'Giggio', '2022-08-26', '', '1996-09-30'),
-('lillogreg60@yahoo.com', 'Lillo', 'Greg', '2022-08-26', '', '1960-10-10'),
-('luigibianchi@email.com', 'Luigi', 'Bianchi', '2021-12-18', '', '1972-05-01'),
-('marcogino90@yandex.com', 'Marco', 'Gino', '2022-08-26', '', '1990-12-12'),
-('mariorossi@email.com', 'Mario', 'Rossi', '2021-12-18', '../img/Andrea.jpg', '1994-12-06'),
-('matteopillon98@gmail.com', 'Matteo', 'Pillon', '2021-12-19', '../img/MatteoP.jpg', '1998-10-17'),
-('matteoplln@gmail.com', 'Mat', 'Pil', '2022-09-04', '', '1998-09-17');
+('admin@admin.it', 'admin', 'admin', '2022-09-10', '', '2000-06-29'),
+('user@user.it', 'user', 'user', '2022-09-10', '', '2000-06-29'),
+('matteopillon98@gmail.com', 'Matteo', 'Pillon', '2021-12-19', 'img/MatteoP.jpg', '1998-10-17');
+
 
 -- --------------------------------------------------------
 
@@ -234,30 +221,6 @@ INSERT INTO `veicolo` (`Targa`, `marca`, `modello`, `cilindrata`, `anno`, `posti
 
 -- --------------------------------------------------------
 
---
--- Struttura della tabella `veicoloesposto`
---
-
-CREATE TABLE `veicoloesposto` (
-  `id_Esposizione` int(11) NOT NULL,
-  `veicolo` varchar(7) NOT NULL,
-  `evento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dump dei dati per la tabella `veicoloesposto`
---
-
-INSERT INTO `veicoloesposto` (`id_Esposizione`, `veicolo`, `evento`) VALUES
-(1, 'AB001CD', 1),
-(2, 'AB002CD', 2),
-(4, 'AB003CD', 3);
-
---
--- Indici per le tabelle scaricate
---
-
---
 -- Indici per le tabelle `account`
 --
 ALTER TABLE `account`
@@ -306,13 +269,6 @@ ALTER TABLE `veicolo`
   ADD PRIMARY KEY (`Targa`),
   ADD KEY `marca` (`marca`) USING BTREE;
 
---
--- Indici per le tabelle `veicoloesposto`
---
-ALTER TABLE `veicoloesposto`
-  ADD PRIMARY KEY (`id_Esposizione`),
-  ADD KEY `Veicolo` (`veicolo`),
-  ADD KEY `Evento` (`evento`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -348,11 +304,6 @@ ALTER TABLE `evento`
 ALTER TABLE `indirizzo`
   MODIFY `id_Indirizzo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
---
--- AUTO_INCREMENT per la tabella `veicoloesposto`
---
-ALTER TABLE `veicoloesposto`
-  MODIFY `id_Esposizione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Limiti per le tabelle scaricate
@@ -361,6 +312,7 @@ ALTER TABLE `veicoloesposto`
 --
 -- Limiti per la tabella `account`
 --
+
 ALTER TABLE `account`
   ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`email`) REFERENCES `utente` (`Email`);
 COMMIT;
