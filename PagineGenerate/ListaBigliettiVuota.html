@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
+        <title>Eventi - Auto Asta</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Homepage di Auto Asta"/>
+        <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
+    </head>
+    <body>
+        <div class="globalDiv">     
+
+        
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="scheda_utente.php" tabindex="0">VISITA IL TUO PROFILO</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; Lista Biglietti </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li><li role='none' ><a  href="addVeicolo.php" role="menuitem" >Aggiungi veicolo</a></li><li role='none' ><a  href="editorVeicoli.php" role="menuitem">Modifica Veicolo</a></li><li role='none' ><a  href="selectEventoToEdit.php" role="menuitem">Modifica Evento</a></li><li role='none' ><a  href="addEvento.php" role="menuitem">Aggiungi Evento</a></li><li role='menuitem' >Lista Biglietti</li>    </ul>
+</nav>
+            <main>
+            
+
+    <h2> I NOSTRI EVENTI </h2>
+    <dl class="eventList">
+        <dt>SEMBRA CHE TU NON ABBIA COMPRATO NESSUN BIGLIETTO</dt><dd>Passa alla <a href="eventi.php">Pagina Eventi</a> per prenotare il posto</dd>
+    </dl>
+            </main>   
+        <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>        </div>
+    </body>
+</html>
+

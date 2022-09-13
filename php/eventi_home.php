@@ -21,7 +21,7 @@
                 $listaPersonaggi .= '<dd class= "eventDescription">
                     <img class="eventImg" alt="'.$personaggio['nome'].'" src="../img/' . $personaggio['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>
-                    <a class="eventButton" href="../php/eventi.php">ALTRI EVENTI</a>
+                    <a aria-label="Ottieni informazioni su altri eventi che si svolgeranno" class="eventButton" href="../php/eventi.php">INFORMAZIONI ALTRI EVENTI</a>
                 </dd>';
             }
 

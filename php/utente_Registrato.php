@@ -91,10 +91,11 @@ class utente_Registrato extends utente{
 
     public function addAstaEmpty ($base_Asta,$targa_Veicolo){
         $targa = strtoupper($targa_Veicolo);
+        $dataAcquisto = date("Y-m-d");
 
         $this->getDB()->query(
-            "INSERT INTO Asta (id_Asta,base_Asta,targa_Veicolo)
-            VALUES (NULL,'$base_Asta','$targa_Veicolo');"
+            "INSERT INTO asta (id_Asta,base_Asta,venduto,prezzo_Finale,targa_Veicolo,data,email_Acquirente)
+            VALUES (NULL,'$base_Asta','0','0','$targa_Veicolo','$dataAcquisto',NULL);"
         );
 
         return $this->getDBError() == 0;

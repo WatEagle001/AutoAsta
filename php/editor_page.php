@@ -20,9 +20,9 @@
 
             foreach($veicoli as $veicolo){
                 $ListaVeicoli .='<article class = "carArticle">';
-                $ListaVeicoli .= '<h3 > ' . $veicolo['marca'].' '.$veicolo['modello'] . ' - Targa ' . $veicolo['Targa']  .'</h3>';
+                $ListaVeicoli .= '<h2 > ' . $veicolo['marca'].' '.$veicolo['modello'] . ' - Targa ' . $veicolo['Targa']  .'</h2>';
                 $ListaVeicoli .= '
-                    <img class="imgListaAuto" src="../img/' . $veicolo['url_Immagine'] . '"/>
+                    <img class="imgListaAuto" alt="'.$veicolo['marca'].' '.$veicolo['modello'].' su strada" src="../img/' . $veicolo['url_Immagine'] .  '"/>
                     <p class="eventParagraph"> ' . $veicolo['descrizione'] . '</p>   
                     <p class="carPrice">Prezzo base: '.$veicolo['base_Asta'].'&euro;</p>
                 <a  href="editSingleVeicolo.php?Targa='.$veicolo['Targa'].'">Modifica</a>

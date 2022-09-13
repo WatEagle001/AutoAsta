@@ -17,11 +17,11 @@
     if(!empty($_SESSION)){
         //$user = getLoggedUser($_SESSION['email']);
         if(!empty($_POST)){
-            $checkUpdate = $gestione_Update->updateEventoInfo($_POST,$user);
+            $checkUpdate = $gestione_Update->updateEventoInfo($_GET['id_Evento'],$_POST,$user);
             if($checkUpdate){
             $_SESSION['successMsg'] = "Evento modificato con successo";
             //UPDATE AVVENUTO CON SUCCESSO
-            header("Location: selectEventoToEdit.php");
+            header("Location: ../php/pagina_avvisi.php");
             exit();
             }else {
                 $_SESSION['errorMsg'] = "Impossibile modificare l'evento"; 
@@ -36,7 +36,7 @@
  <html lang="it"> 
      <head> 
          <link rel="icon" type="image/x-icon" href="../img/2061866.png"/> 
-         <title>Login Utente - Auto Asta</title> 
+         <title>Editor Eventi - Auto Asta</title> 
          <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/> 
          <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/> 
          <meta charset="UTF-8"/> 
@@ -48,7 +48,7 @@
      <body> 
          <div class="globalDiv">   
         <?php require_once ('header.php')?>
-        <div id='content'>
+        <main>
             <?php 
                 $paginaHTML= file_get_contents("../html/editSingleEvento.html");
                 $connessione = new database_Manager();
@@ -57,7 +57,7 @@
                 $listaVeicoli = $paginaHTML; /* CODICE DI HTML DA DARE IN OUTPUT */
 
                 if($connessioneOK){
-                    $personaggi = $connessione->getEventoInfo('1');
+                    $personaggi = $connessione->getEventoInfo($_GET['id_Evento']);
                     $connessione->releaseDB();
                     if($personaggi != null){
                         foreach($personaggi as $veicolo){
@@ -78,7 +78,7 @@
                 }
                 echo $listaVeicoli;
             ?>    
-        </div>   
+        </main>   
         <?php require_once ('../html/footer.html')?>
         </div>
     </body>

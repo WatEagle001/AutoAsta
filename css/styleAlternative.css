@@ -163,14 +163,14 @@ input:focus::placeholder{
     padding-left: 1em;
 }
 
-#content{
+main{
     margin-left:25%;
     border-left: 1px solid #000;
     padding:1.0em;
     background-color: #fff;
 }
 
-#content h2 {
+main h2 {
     text-align: center;
     font-size: 2em;
     padding-bottom: 1em;
@@ -273,21 +273,21 @@ div .userProfileCard{
     flex-flow: row;
 }
 
-.eventDescription ul {
-    list-style: none;
+.ticketDescription{
+    background-color: #000;
+    color: #fff;
+    min-height: 200px;
     display: flex;
-    flex-direction: column;
+    flex-flow: row;
     flex-wrap: wrap;
 }
 
-.eventDescription ul li{
-    padding: 0.5em;
-}
 
 .idBiglietto{
-    padding: 0.2em;
-    margin: 0 auto;
+    /*padding: 0.2em;*/
+    /*margin: 0 auto;*/
     color:#000;
+    flex:1;
     text-align: center;
     background-color: #D8D8D8;
 }
@@ -312,6 +312,7 @@ div .userProfileCard{
     color:#000;
     text-align: center;
 }
+
 
 /*
 -------------------------------------------------------------------

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
+        <title>Veicoli - Auto Asta</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Homepage di Auto Asta"/>
+        <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
+    </head>
+    <body>
+        <div class="globalDiv">     
+
+        
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="registrazione.php" tabindex="0">ACCEDI/REGISTRATI</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; Veicoli </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='seventi'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='menuitem' class='sveicoli' id='active'>Veicoli</li>    </ul>
+</nav>
+            <main id="content">
+                
+<h2>I NOSTRI VEICOLI</h2>
+<div class="autoList">
+    <article class = "carArticle"><h3 > Audi A5</h3>
+                    <img class="imgListaAuto" alt="Audi A5 su strada" src="../img/AudiA5.jpg"/>
+                    <p class="eventParagraph"> Bellissima AUDI A5, utilizzata prevalentemente come auto aziendale</p>   
+                    <p class="carPrice">Prezzo base: 35000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=AB001CD">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-25</p>
+                </article><article class = "carArticle"><h3 > Audi Quattro</h3>
+                    <img class="imgListaAuto" alt="Audi Quattro su strada" src="../img/Audi-quattro-179836866.jpg"/>
+                    <p class="eventParagraph"> Bellissima Audi Quattro, anno 1990, cambio sequenziale, motore 3000 5 cilindri, iniezione fasata sequenziale. </p>   
+                    <p class="carPrice">Prezzo base: 22000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=FJ537TA">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-10</p>
+                </article><article class = "carArticle"><h3 > Volvo Polar</h3>
+                    <img class="imgListaAuto" alt="Volvo Polar su strada" src="../img/Volvo-polar.jpg"/>
+                    <p class="eventParagraph"> Ottima volvo polar, indistruttibile motore 6 cilindi vecchia scuola. Consuma ma non si rompe nemmeno a pagarla</p>   
+                    <p class="carPrice">Prezzo base: 47000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=DD001FF">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-23</p>
+                </article><article class = "carArticle"><h3 > Opel Corsa</h3>
+                    <img class="imgListaAuto" alt="Opel Corsa su strada" src="../img/Corsa_opc.jpg"/>
+                    <p class="eventParagraph"> Nuovissima Opel Corsa OPC. 207 CV tutti davanti pronti a far divertire chiunque</p>   
+                    <p class="carPrice">Prezzo base: 25000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=FY590WR">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-25</p>
+                </article><article class = "carArticle"><h3 > Mercedes 190</h3>
+                    <img class="imgListaAuto" alt="Mercedes 190 su strada" src="../img/mercedes_190.jpg"/>
+                    <p class="eventParagraph"> Fantastica Mercedes 190e, esemplare tenuto benissimo</p>   
+                    <p class="carPrice">Prezzo base: 100000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=AS957AZ">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-25</p>
+                </article><article class = "carArticle"><h3 > Toyota Hilux</h3>
+                    <img class="imgListaAuto" alt="Toyota Hilux su strada" src="../img/toyota_hylux.jpg"/>
+                    <p class="eventParagraph"> Classico Pick Up Toyota, indistruttibile e a prova di usura</p>   
+                    <p class="carPrice">Prezzo base: 96000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=DY738BF">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-24</p>
+                </article><article class = "carArticle"><h3 > Volkswagen Golf</h3>
+                    <img class="imgListaAuto" alt="Volkswagen Golf su strada" src="../img/golf_4.jpg"/>
+                    <p class="eventParagraph"> Il classico VR6 marchiato Vokswagen non si smentisce mai. Auto estremamente divertente e affidabile</p>   
+                    <p class="carPrice">Prezzo base: 13000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=TP006AS">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-21</p>
+                </article><article class = "carArticle"><h3 > Cadillac Escalade</h3>
+                    <img class="imgListaAuto" alt="Cadillac Escalade su strada" src="../img/cadillac.jpg"/>
+                    <p class="eventParagraph"> Enorme suv americano dotato di un 5.0 ad 8 cilindri a V. </p>   
+                    <p class="carPrice">Prezzo base: 98000&euro;</p>
+                <a href="scheda_veicolo.php?Targa=FW098RW">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-24</p>
+                </article><article class = "carArticle"><h3 > Mercedes a180</h3>
+                    <img class="imgListaAuto" alt="Mercedes a180 su strada" src="../img/mercedesA180.jpg"/>
+                    <p class="eventParagraph"> gewognieoiwngoiwengo</p>   
+                    <p class="carPrice">Prezzo base: 12540&euro;</p>
+                <a href="scheda_veicolo.php?Targa=MP888PL">APRI SCHEDA VEICOLO</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-09-06</p>
+                </article>
+</div>    
+
+
+            </main>   
+        <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>        </div>
+    </body>
+</html>

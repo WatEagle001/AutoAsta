@@ -1,55 +1,3 @@
-<?php
-    require_once ('session_Manager.php');
-    require_once('page.php');
-
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-    $user = createSession();
-    $gestione_accessi = new  page();
-
-    if(!empty($_POST)){
-        if($_FILES['url_immagine']['size'] != 0){
-            $checkIMG = $gestione_accessi->upload($_POST,$_FILES);
-            if($checkIMG){
-                $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user,$_FILES);
-                if($checkIns){
-                $user = createSession();
-                $enc_pswd = md5($_POST['psw']);
-                $user = login($_POST['email'], $enc_pswd);
-                header("Location: scheda_utente.php");
-                    exit();
-                }
-                else{
-                    $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
-                }
-            }
-        }
-        else{
-            $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user,$_FILES);
-                if($checkIns){
-                    $user = createSession();
-                    $enc_pswd = md5($_POST['psw']);
-                    $user = login($_POST['email'], $enc_pswd);
-                    header("Location: scheda_utente.php");
-                    exit();
-                }
-                else{
-                    $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
-                    
-                }
-        }
-        header("Location: pagina_avvisi.php");
-        exit();
-    }
-    
-    if ($user->isReg()){
-        header("Location: index.php");
-        exit();
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="it">
     <head>
@@ -65,8 +13,25 @@
     </head>
     <body>
         <div class="globalDiv">
-        <?php require_once ('header.php')?>
-            <main id="content">
+        
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a>ACCEDI/REGISTRATI</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt;  Registrazione Utente </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
+</nav>            <main id="content">
                 <form name="registrazione" action="../php/registrazione.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM REGISTRAZIONE</h2>
@@ -120,7 +85,12 @@
                     </div>
                 </form>
             </main>
-            <?php require_once ('../html/footer.html')?>
-        </div>
+            <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>        </div>
     </body>
 </html>

@@ -15,9 +15,9 @@
         <div class="globalDiv">     
 
         <?php require_once ('header.php')?>
-            <div id="content"> 
+            <main id="content"> 
                 <?php require_once('../html/chisiamo.html')?>
-            </div>   
+            </main>   
         <?php require_once ('../html/footer.html')?>
         </div>
     </body>

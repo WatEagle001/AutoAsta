@@ -3,7 +3,7 @@ class database_Manager{
     private $DB_HOST = "localhost";
     private $DB_NAME = "AutoAsta_merge";
     private $USER = "root";
-    private $PWD = "";
+    private $PWD = "root";
     private $connection;
 
     public function __construct(){
@@ -50,7 +50,7 @@ class database_Manager{
     }
 
     public function getEventiList(){
-        $query = "SELECT * FROM Evento ORDER BY data DESC;";
+        $query = "SELECT * FROM Evento ORDER BY data ASC;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventiList:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -138,7 +138,7 @@ class database_Manager{
     }
 
     public function getNewVeicoli(){
-        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa ORDER BY data_Aggiunta ASC LIMIT 2";
+        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa ORDER BY veicolo.data_Aggiunta DESC LIMIT 2";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNewVeicoli:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -156,7 +156,8 @@ class database_Manager{
     }
 
     public function getNextEvento(){
-        $query = "SELECT * FROM Evento WHERE data >= CURRENT_TIMESTAMP  LIMIT 1;";
+        $current_Date = date("Y-m-d H:i:s");
+        $query = "SELECT * FROM evento WHERE evento.data >= '$current_Date'  ORDER BY Evento.data LIMIT 1;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNextEvento:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){

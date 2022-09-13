@@ -20,12 +20,12 @@
     </div>
 </header>  
 
-<nav id="breadcrumb">
+<nav id="breadcrumb" role="navigation">
     <?php $page->printBreadcrumb();?>
 </nav>
 
-<div id="menu">
-    <ul>
+<nav id="menu" role="navigation">
+    <ul role="menu">
         <?php $page->printMenu(); ?>
     </ul>
-</div>
+</nav>

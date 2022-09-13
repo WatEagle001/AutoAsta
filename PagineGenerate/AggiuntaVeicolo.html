@@ -1,38 +1,4 @@
-<?php
-    require_once ('session_Manager.php');
-    require_once('page.php');
 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-    $user = createSession();
-    $page = new page();
-
-    if($_SESSION["isAdmin"] != 1){
-        $_SESSION['errorMsg'] = "Devi essere un amministratore per accedere alla funzionalit&agrave; di aggiunta veicolo";
-        header('Location: ../php/pagina_avvisi.php');
-        exit;
-    }
-
-    if(!empty($_POST)){
-        $checkIMG = $page->upload($_POST,$_FILES);
-        if($checkIMG){
-            $checkIns = $user->addVeicolo($_POST['Targa'],$_POST['marca'],$_POST['modello'],$_POST['cilindrata'],$_POST['anno'],$_POST['posti'],$_POST['cambio'],$_POST['carburante'],$_POST['colore_esterni'],basename($_FILES["url_immagine"]["name"]),$_POST['descrizione'],$_POST['chilometri_Percorsi'],1);
-            if($checkIns){
-                $_SESSION['successMsg'] = "Veicolo aggiunto con successo";
-                $checkIns = $user->addAstaEmpty($_POST['Prezzo'],$_POST['Targa']);
-            }
-            else {
-                $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
-            }
-        }
-        
-        header('Location: ../php/pagina_avvisi.php');
-        exit;
-    }
-        
-?>
 <!DOCTYPE html>
  <html lang="it">
      <head>
@@ -48,8 +14,25 @@
      </head>
      <body>
          <div class="globalDiv">
-         <?php require_once ('header.php')?>
-         <main>
+         
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="scheda_utente.php" tabindex="0">VISITA IL TUO PROFILO</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; Aggiungi Veicolo </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li><li role='menuitem' >Aggiungi Veicolo</li><li role='none' ><a  href="editorVeicoli.php" role="menuitem">Modifica Veicolo</a></li><li role='none' ><a  href="selectEventoToEdit.php" role="menuitem">Modifica Evento</a></li><li role='none' ><a  href="addEvento.php" role="menuitem">Aggiungi Evento</a></li><li role='none' ><a  href="listaBiglietti.php" role="menuitem">Lista Biglietti</a></li>    </ul>
+</nav>         <main>
          <form action="../php/addVeicolo.php" method="post" id="formAddVeicolo" enctype="multipart/form-data">
              <div class="registration_form">
              <h2>Inserimento Veicolo</h2>
@@ -142,7 +125,12 @@
              </div>
          </form>
 </main>
-         <?php require_once ('../html/footer.html')?>
-        </div>
+         <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>        </div>
      </body>
  </html>

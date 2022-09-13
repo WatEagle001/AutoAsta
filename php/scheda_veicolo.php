@@ -11,7 +11,7 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Scheda utente - Auto Asta</title>
+        <title>Scheda Veicolo - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
         <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
@@ -24,7 +24,7 @@
     <body>
         <div class="globalDiv">     
             <?php require_once ('header.php')?>
-            <div id="content">
+            <main>
                 <?php 
                     $paginaHTML = file_get_contents('../html/scheda_veicolo.html');
                     $connessione = new database_Manager();
@@ -38,7 +38,7 @@
                         if($personaggi != null){
                             foreach($personaggi as $veicolo){
                                 $listaVeicoli = str_replace("{veicolo_targa}", $veicolo["Targa"],$listaVeicoli);
-                                $listaVeicoli = str_replace("{veicolo-img}", '<img class="eventImg" src="../img/' .$veicolo['url_Immagine'] . '"/>',$listaVeicoli);
+                                $listaVeicoli = str_replace("{veicolo-img}", '<img class="eventImg" alt="Immagine del veicolo su strada" src="../img/' .$veicolo['url_Immagine'] . '"/>',$listaVeicoli);
                                 $listaVeicoli = str_replace("{marca}", $veicolo["marca"],$listaVeicoli);
                                 $listaVeicoli = str_replace("{modello}", $veicolo["modello"],$listaVeicoli);
                                 $listaVeicoli = str_replace("{cilindrata}", $veicolo["cilindrata"],$listaVeicoli);
@@ -64,7 +64,7 @@
                     echo $listaVeicoli;
                     ?>
 
-                </div>
+                </main>
             <?php require_once ('../html/footer.html')?>
         </div>
     </body>

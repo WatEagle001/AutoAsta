@@ -21,10 +21,10 @@
 
                 $listaEventi .= '<dt class = "eventTitle" > ' . $evento['nome'] .' '.  $date->format('d-m-Y').'</dt>';
                 $listaEventi .= '<dd class= "eventDescription">
-                    <img class="eventImg" src="../img/' . $evento['url_immagine'] . '"/>
-                    <p class="eventParagraph"> ' . $evento['descrizione'] . '</p>';
+                <img class="eventImg" src="../img/' . $evento['url_immagine'] . '" alt="Immagine panoramica della citt&agrave; di '. basename($evento['url_immagine'], ".jpg"). '"/>
+                    <div class="eventParagraph"> ' . $evento['descrizione'] . '</div>';
                     if($checkDate[$index]){
-                        $listaEventi.= '</dd><p class="notAvailable" >PECCATO, QUESTO EVENTO &Egrave TRASCORSO BIGLIETTO NON DISPONIBILE </p>'; 
+                        $listaEventi.= '<div class="notAvailable">PECCATO, QUESTO EVENTO &Egrave; TRASCORSO BIGLIETTO NON DISPONIBILE </div></dd>'; 
                     }
                     else {
                         $listaEventi .= '<a class="eventButton" href="buy_Ticket.php?ID='.$evento['id_Evento'].'">COMPRA BIGLIETTO</a> </dd>';

@@ -111,12 +111,12 @@ input:focus::placeholder{
     border-bottom: 1px solid #000;
 }
 
-#content{
+main{
     margin-left: 0;
     border:none;
 }
 
-#content h2{
+main h2{
     text-align: center;
     font-size: 1.3em;
 }

@@ -1,39 +1,8 @@
-<?php
-    require_once ('session_Manager.php');
-    require_once('page.php');
-
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-    $gestione_Update = new  page();
-    $session = createSession();
-
-    if(!empty($_POST)){
-        $user = getLoggedUser($_SESSION['email']);
-        if(!empty($_POST)){
-            $checkIMG = $gestione_Update->upload($_POST,$_FILES);
-            if($checkIMG){
-                $checkUpdate = $gestione_Update->updateUserInfo($_POST,$user,$_FILES);
-                if($checkUpdate){
-                    header("Location: scheda_utente.php");
-                    exit();
-                }else{
-                    $_SESSION['errorMsg'] = "Impossibile aggiornare le informazioni, ti preghiamo di riprovare.";
-                    
-                }
-            }
-        }
-        header("Location: pagina_avvisi.php");
-        exit();
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Modifica Profilo - Auto Asta</title>
+        <title>Aggiorna informazioni Utente - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
         <meta charset="UTF-8"/>
@@ -44,8 +13,26 @@
     </head>
     <body>
         <div class="globalDiv">
-        <?php require_once ('header.php')?>
-            <main>
+        
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="registrazione.php" tabindex="0">ACCEDI/REGISTRATI</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; <a href="scheda_utente.php">Scheda Utente</a> &gt; &gt;
+                Modifica Profilo </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
+</nav>            <main>
                 <form action="../php/edit_profile.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM MODIFICA DATI UTENTE </h2>
@@ -70,7 +57,12 @@
                     </div>
                 </form>
 </main>
-            <?php require_once ('../html/footer.html')?>
-      </div>
+            <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>      </div>
     </body>
 </html>

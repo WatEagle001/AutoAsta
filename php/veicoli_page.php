@@ -19,7 +19,7 @@
                 $listaVeicoli .='<article class = "carArticle">';
                 $listaVeicoli .= '<h3 > ' . $veicolo['marca'].' '.$veicolo['modello'] .'</h3>';
                 $listaVeicoli .= '
-                    <img class="imgListaAuto" alt="'.$veicolo['marca'].''.$veicolo['modello'].'" src="../img/' . $veicolo['url_Immagine'] . '"/>
+                    <img class="imgListaAuto" alt="'.$veicolo['marca'].' '.$veicolo['modello'].' su strada" src="../img/' . $veicolo['url_Immagine'] . '"/>
                     <p class="eventParagraph"> ' . $veicolo['descrizione'] . '</p>   
                     <p class="carPrice">Prezzo base: '.$veicolo['base_Asta'].'&euro;</p>
                 <a href="scheda_veicolo.php?Targa='.$veicolo['Targa'].'">APRI SCHEDA VEICOLO</a>

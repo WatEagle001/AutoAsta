@@ -6,17 +6,12 @@
     
     <fieldset name="capienza" form="formEditEventi"> 
        <label for="capienza"><b>Capienza</b></label> 
-       <input type="text" value = {value-capienza} placeholder="Inserisci la capienza" name="capienza" id="capienza"> 
+       <input type="text" value = {value-capienza} placeholder="Inserisci la capienza" name="capienza" aria-required="true" required> 
     </fieldset> 
-    
-    <fieldset name="id_Evento" form="formEditEventi"> 
-        <label for="id_Evento"><b>Id</b></label> 
-        <input type="number" value = {value-id_Evento} placeholder="Inserisci l'id" name="id_Evento" id="id_Evento"> 
-     </fieldset> 
 
     <fieldset name="data" form="formEditEventi"> 
         <label for="data"><b>Data</b></label> 
-        <input type="date" value = {value-data} placeholder="Inserisci la data" name="data" id="data"> 
+        <input type="date" value = {value-data} placeholder="Inserisci la data" name="data" id="data" aria-required="true" required> 
     </fieldset> 
 
     <fieldset name="nome" form="formEditEventi"> 
@@ -30,11 +25,11 @@
 
     <fieldset name="prezzo" form="formEditEventi"> 
        <label for="prezzo"><b>Prezzo</b></label> 
-       <input type="number" value = {value-prezzo} placeholder="Inserisci il prezzo" name="prezzo" id="prezzo"> 
+       <input type="number" value = {value-prezzo} placeholder="Inserisci il prezzo" name="prezzo" id="prezzo" aria-required="true" required> 
        </select> 
     </fieldset> 
 
-    <button type="submit" class="register_btn" name="submit">Modifica Dati Evento</button> 
-    <input type="submit" class="reset_btn"> 
+    <button type="submit" class="register_btn" name="submit" aria-label="Modifica i dati dell'evento">Modifica Dati Evento</button> 
+    <input type="submit" class="reset_btn" aria-label="Cancella i campi inseriti"> 
     </div> 
 </form> 

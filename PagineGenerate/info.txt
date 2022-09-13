@@ -1,0 +1,1 @@
+In questa cartella metto le pagine HTML generate automaticamente con PHP e che sono state usate per la validazione.

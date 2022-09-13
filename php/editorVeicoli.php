@@ -34,7 +34,7 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Modifica Veicolo - Auto Asta</title>
+        <title>Editor Veicoli - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
         <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
@@ -46,9 +46,9 @@
     <body>
         <div class="globalDiv">     
         <?php require_once ('header.php')?>
-        <div id='content'>
+        <main id='content'>
             <?php require_once ('editor_page.php')?>
-        </div>
+        </main>
         <?php require_once ('../html/footer.html')?>
         </div>
     </body>

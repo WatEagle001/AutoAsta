@@ -1,48 +1,10 @@
-<?php 
-    require_once ('session_Manager.php'); 
-    require_once('page.php'); 
- 
-    ini_set('display_errors', 1); 
-    ini_set('display_startup_errors', 1); 
-    error_reporting(E_ALL); 
- 
-    $user = createSession(); 
-    $page = new page();
- 
-    if($_SESSION["isAdmin"] != 1){ 
-        $_SESSION['errorMsg'] = "Devi essere un amministratore per accedere alla funzionalit&agrave; di aggiunta veicolo"; 
-        header('Location: ../php/pagina_avvisi.php'); 
-        exit; 
-    } 
- 
-    if(!empty($_POST)){ 
-        $checkIns = $user->addIndirizzo($_POST['via'],$_POST['citta'],$_POST['cap'],$_POST['num_Civico']);
-        if($checkIns){ 
-            $connessione = new database_Manager();
-            $connessioneOK = $connessione->connectToDatabase();
-            $indirizzo = $connessione->getIdIndirizzo($_POST['via'],$_POST['citta'],$_POST['cap'],$_POST['num_Civico']);
-            $connessione->releaseDB();
-            $checkIMG = $page->upload($_POST,$_FILES);
-            if($checkIMG == 1){
-                $checkIns = $user->addEvento($_POST['Capienza'],$_POST['Data'],$indirizzo[0]['id_Indirizzo'],$_POST['nome'],$_POST['Descrizione'],$_POST['Prezzo'],basename($_FILES["url_immagine"]["name"])); 
-                if($checkIns){ 
-                    $_SESSION['successMsg'] = "Evento aggiunto con successo"; 
-                } 
-                else $_SESSION['errorMsg'] = "Impossibile aggiungere l'evento"; 
-            }            
-        } 
-        else $_SESSION['errorMsg'] = "Impossibile aggiungere l'indirizzo"; 
 
-       header('Location: ../php/pagina_avvisi.php'); 
-       exit;
-    } 
-         
-?> 
+ 
 <!DOCTYPE html> 
  <html lang="it"> 
      <head> 
          <link rel="icon" type="image/x-icon" href="../img/2061866.png"/> 
-         <title>Aggiungi Evento - Auto Asta</title> 
+         <title>Login Utente - Auto Asta</title> 
          <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/> 
          <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/> 
          <meta charset="UTF-8"/> 
@@ -53,7 +15,25 @@
      </head> 
      <body> 
          <div class="globalDiv"> 
-            <?php require_once ('header.php')?> 
+            
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="scheda_utente.php" tabindex="0">VISITA IL TUO PROFILO</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; Aggiungi Evento </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li><li role='none' ><a  href="addVeicolo.php" role="menuitem" >Aggiungi veicolo</a></li><li role='none' ><a  href="editorVeicoli.php" role="menuitem">Modifica Veicolo</a></li><li role='none' ><a  href="selectEventoToEdit.php" role="menuitem">Modifica Evento</a></li><li role='menuitem' >Aggiungi Evento</li><li role='none' ><a  href="listaBiglietti.php" role="menuitem">Lista Biglietti</a></li>    </ul>
+</nav> 
             <main> 
                 <form action="../php/addEvento.php" method="post" id="formAddEvento" enctype="multipart/form-data"> 
                     <div class="registration_form"> 
@@ -112,7 +92,13 @@
                     </div> 
                 </form> 
             </main> 
-            <?php require_once ('../html/footer.html')?> 
+            <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer> 
         </div> 
     </body> 
 </html>

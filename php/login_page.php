@@ -34,33 +34,35 @@
     </head>
     <body>
         <div class="globalDiv">
-        <?php require_once ('header.php')?>
-        <div id="content">
-        <form name="login" action="../php/login_page.php" method="post">
-            <div class="login_form">
-            <h2>FORM LOGIN</h2>
-            <p>Compila i campi seguenti per completare il login </p>
-            <hr>
+            <?php require_once ('header.php')?>
+            <main id="content">
+                <form name="login" action="../php/login_page.php" method="post">
+                    <div class="login_form">
+                        <h2>FORM LOGIN</h2>
+                        <p>Compila i campi seguenti per completare il login </p>
+                        <hr>
         
-            <fieldset form="registrazione" name="email">
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" required>
-            </fieldset>
+                        <fieldset name="email">
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" aria-required="true"  required>
+                        </fieldset>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" required>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw"  aria-required="true" required>
 
-            <?php 
-                    if($user)
-                        $page->setErrors(!$user->isReg());
-                        if($page->hasErrors()) $page->printMessagge('Username o password errati',false);
-            ?>
+                        <?php 
+                            
+                                if($user)
+                                    $page->setErrors(!$user->isReg());
+                                    if($page->hasErrors()) $page->printMessagge('Username o password errati',false);
+                            
+                        ?>
         
-            <button type="submit" class="register_btn">ACCEDI</button>
-            </div>
-        </form>
-        </div>
-        <?php require_once ('../html/footer.html')?>
-        <div class="globalDiv">
+                        <button type="submit" class="register_btn" aria-label="Accedi" >ACCEDI</button>
+                    </div>
+                </form>
+            </main>
+            <?php require_once ('../html/footer.html')?>
+        </div >
     </body>
 </html>

@@ -39,7 +39,7 @@
     <body>
         <div class="globalDiv">     
             <?php require_once ('header.php')?>
-            <div id="content">
+            <main>
                 <?php 
                     $paginaHTML = file_get_contents('../html/scheda_utente.html');
                     $connessione = new database_Manager();
@@ -59,7 +59,7 @@
                                 $listaPersonaggi = str_replace("{user_birthday}",$personaggio['data_nascita'],$listaPersonaggi);
                                 $listaPersonaggi = str_replace("{user_reg_day}",$personaggio['data_Creazione'],$listaPersonaggi);
                                 $listaPersonaggi = str_replace("{user_img}",
-                                    '<img class="eventImg" src="../img/' .$personaggio['url_Immagine'] . '"/>',$listaPersonaggi);
+                                    '<img class="eventImg" alt="" src="../img/' .$personaggio['url_Immagine'] . '"/>',$listaPersonaggi);
                             }
                         }
                         else{
@@ -72,7 +72,7 @@
                     echo $listaPersonaggi;
                     ?>
 
-                </div>
+                </main>
             <?php require_once ('../html/footer.html')?>
         </div>
     </body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
+        <title>Home Page - Auto Asta</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Homepage di Auto Asta"/>
+        <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
+    </head>
+    <body>
+        <div class="globalDiv">     
+
+        
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="registrazione.php" tabindex="0">ACCEDI/REGISTRATI</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p lang="en">Home</p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='menuitem' class='shome' id='active' lang="en">Home</li><li role='none' class='schisiamo'><a   href="chisiamo.php" tabindex="0" role="menuitem">Chi Siamo</a></li><li role='none' class='seventi'><a   href="eventi.php" tabindex="0" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" tabindex="0" role="menuitem">Veicoli</a></li>    </ul>
+</nav>
+            <main id="content">
+
+                
+<h2>ULTIME AUTO AGGIUNTE</h2>
+<div class="autoList">
+    <article class = "carArticle"><h3 > Mercedes a180</h3>
+                    <img class="imgListaAuto" alt="Mercedesa180" src="../img/mercedesA180.jpg"/>
+                <a aria-label="Ottieni maggiori informazioni riguardanti il veicolo" href="scheda_veicolo.php?Targa=MP888PL">MAGGIORI INFORMAZIONI</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-09-06</p>
+                </article><article class = "carArticle"><h3 > Audi A5</h3>
+                    <img class="imgListaAuto" alt="AudiA5" src="../img/AudiA5.jpg"/>
+                <a aria-label="Ottieni maggiori informazioni riguardanti il veicolo" href="scheda_veicolo.php?Targa=AB001CD">MAGGIORI INFORMAZIONI</a>
+                <p class="publish_date"> Pubblicato il giorno: 2022-08-25</p>
+                </article>
+</div>    
+
+
+                
+
+    <h2> PROSSIMO EVENTO IN PROGRAMMA </h2>
+    <dl class="eventList">
+        <dt class = "eventTitle" > AutoAsta Bologna 16-09-2022</dt><dd class= "eventDescription">
+                    <img class="eventImg" alt="AutoAsta Bologna" src="../img/Bologna.jpg"/>
+                    <p class="eventParagraph"> AutoAsta arriva finalmente anche a Bologna! Non potevamo saltare la terra dei motori, venite a trovarci in questa avvincente giornata esposizione, all'esposizione ci sarà un'auto speciale per celebrare l'occasione. </p>
+                    <a aria-label="Ottieni informazioni su altri eventi che si svolgeranno" class="eventButton" href="../php/eventi.php">INFORMAZIONI ALTRI EVENTI</a>
+                </dd>
+    </dl>
+                
+            </main>   
+        <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>        </div>
+    </body>
+</html>

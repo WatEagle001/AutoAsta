@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
+        <title>Login Utente - Auto Asta</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Login Utente di Auto Asta"/>
+        <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>    
+        <script src="../JS/script.js"></script>   
+    </head>
+    <body>
+        <div class="globalDiv">
+            
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="registrazione.php" tabindex="0">ACCEDI/REGISTRATI</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; <a href="registrazione.php">Registrazione Utente</a> &gt; &gt;
+                <span lang="en">Login </span> </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
+</nav>            <main id="content">
+                <form name="login" action="../php/login_page.php" method="post">
+                    <div class="login_form">
+                        <h2>FORM LOGIN</h2>
+                        <p>Compila i campi seguenti per completare il login </p>
+                        <hr>
+        
+                        <fieldset name="email">
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" aria-required="true"  required>
+                        </fieldset>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw"  aria-required="true" required>
+
+                        <br />
+<b>Warning</b>:  Undefined variable $user in <b>C:\xampp\htdocs\AutoAsta\php\login_page.php</b> on line <b>55</b><br />
+        
+                        <button type="submit" class="register_btn" aria-label="Accedi" >ACCEDI</button>
+                    </div>
+                </form>
+            </main>
+            <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>        </div >
+    </body>
+</html>

@@ -21,10 +21,10 @@
  
                 $listaEventi .= '<dt class = "eventTitle" > ' . $evento['nome'] .' '.  $date->format('d-m-Y').'</dt>'; 
                 $listaEventi .= '<dd class= "eventDescription"> 
-                    <img class="eventImg" src="../img/' . $evento['url_immagine'] . '"/> 
-                    <p class="eventParagraph"> ' . $evento['descrizione'] . '</p>'; 
+                    <img class="eventImg" src="../img/' . $evento['url_immagine'] . '" alt="Immagine panoramica della citt&agrave; di '. basename($evento['url_immagine'], ".jpg"). '"/> 
+                    <div class="eventParagraph"> ' . $evento['descrizione'] . '</div>'; 
                     if($checkDate[$index]){ 
-                        $listaEventi.= '</dd><p class="notAvailable" >Evento già terminato, non è possibile modificarlo </p>';  
+                        $listaEventi.= '<div class="notAvailable" >Evento già terminato, non è possibile modificarlo </div></dd>';  
                     } 
                     else { 
                         $listaEventi .= '<a class="eventButton" href="editorEventi.php?id_Evento='.$evento['id_Evento'].'">Modifica Evento</a> </dd>'; 

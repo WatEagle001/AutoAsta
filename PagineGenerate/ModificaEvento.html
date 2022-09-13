@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html lang="it"> 
+    <head> 
+        <link rel="icon" type="image/x-icon" href="../img/2061866.png"/> 
+        <title>Eventi - Auto Asta</title> 
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/> 
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/> 
+        <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/> 
+        <meta charset="UTF-8"/> 
+        <meta name="description" content="Homepage di Auto Asta"/> 
+        <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/> 
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>        
+    </head> 
+    <body> 
+        <div class="globalDiv">      
+ 
+        
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="registrazione.php" tabindex="0">ACCEDI/REGISTRATI</a>    </div>
+</header>  
+
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; Modifica Evento </p></nav>
+
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
+    <ul role="menu">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
+</nav> 
+ 
+            <main> 
+                
+
+    <h2> I NOSTRI EVENTI </h2>
+    <dl class="eventList">
+        <dt class = "eventTitle" > AutoAsta Roma 28-05-2022</dt><dd class= "eventDescription"> 
+                    <img class="eventImg" src="../img/Roma.jpg" alt="Immagine panoramica della citt&agrave; di Roma"/> 
+                    <div class="eventParagraph"> AutoAsta arriva anche nella capitale. Simbolo in tutto il mondo di storia e culturale, vi aspettiamo per un weekend all'insegna dei motori in uno dei luoghi più storici al mondo, mi raccomando non mancate!</div><div class="notAvailable" >Evento già terminato, non è possibile modificarlo </div></dd><dt class = "eventTitle" > AutoAsta Bologna 16-09-2022</dt><dd class= "eventDescription"> 
+                    <img class="eventImg" src="../img/Bologna.jpg" alt="Immagine panoramica della citt&agrave; di Bologna"/> 
+                    <div class="eventParagraph"> AutoAsta arriva finalmente anche a Bologna! Non potevamo saltare la terra dei motori, venite a trovarci in questa avvincente giornata esposizione, all'esposizione ci sarà un'auto speciale per celebrare l'occasione. </div><a class="eventButton" href="editorEventi.php?id_Evento=4">Modifica Evento</a> </dd><dt class = "eventTitle" > Pordenone AutoAsta 22-09-2022</dt><dd class= "eventDescription"> 
+                    <img class="eventImg" src="../img/pordenone.jpeg" alt="Immagine panoramica della citt&agrave; di pordenone.jpeg"/> 
+                    <div class="eventParagraph"> AutoAsta arriva anche nella piccola città di Pordenone </div><a class="eventButton" href="editorEventi.php?id_Evento=24">Modifica Evento</a> </dd><dt class = "eventTitle" > AutoAsta Padova 12-12-2022</dt><dd class= "eventDescription"> 
+                    <img class="eventImg" src="../img/Padova.jpg" alt="Immagine panoramica della citt&agrave; di Padova"/> 
+                    <div class="eventParagraph"> Auto Asta arriva nella città del Santo. Venite a visitare le nostre auto in un weekend all'insegna dei motori</div><a class="eventButton" href="editorEventi.php?id_Evento=1">Modifica Evento</a> </dd><dt class = "eventTitle" > AutoAsta 10-10-2023</dt><dd class= "eventDescription"> 
+                    <img class="eventImg" src="../img/Bolzano.jpg" alt="Immagine panoramica della citt&agrave; di Bolzano"/> 
+                    <div class="eventParagraph"> AutoAsta arriva a Bolzano. Gustati belle auto e birroni Forst in totale armonia, e deliziati con i piatti a base di carne</div><a class="eventButton" href="editorEventi.php?id_Evento=5">Modifica Evento</a> </dd><dt class = "eventTitle" > AutoAsta 12-09-2025</dt><dd class= "eventDescription"> 
+                    <img class="eventImg" src="../img/Como.jpg" alt="Immagine panoramica della citt&agrave; di Como"/> 
+                    <div class="eventParagraph"> AutoAsta arriva nelle cita di Como. Acuqa e Auto sono un mix perfetto. Ammira le auto e se ti va sali a bordo del tuo bolide per andare nelle Bellissima Svizzera in poco tempo</div><a class="eventButton" href="editorEventi.php?id_Evento=6">Modifica Evento</a> </dd><dt class = "eventTitle" > AutoAsta Milano 16-12-2025</dt><dd class= "eventDescription"> 
+                    <img class="eventImg" src="../img/Milano.jpg" alt="Immagine panoramica della citt&agrave; di Milano"/> 
+                    <div class="eventParagraph"> Auto Asta arriva nella metropoli, capitale della Moda: Milano. Per questa speciale occasione il salone sarà completamente rinnovato nella sua esposizione, in collaborazione con i marchi più prestigiosi del mondo della moda, venite a trovarci!</div><a class="eventButton" href="editorEventi.php?id_Evento=2">Modifica Evento</a> </dd>
+    </dl>
+ 
+            </main>    
+        <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer> 
+        </div> 
+    </body> 
+</html> 
